@@ -1,0 +1,73 @@
+div#background-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/nature-3824496_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+}
+
+header p {
+    display: inline-block;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5%;
+    margin-left: 2%;
+    margin-top: 1.5%;
+    font-size: 25px;
+}
+
+header p span {
+    color: red;
+    font-size: 35px;
+}
+
+header ul {
+    float: right;
+    margin-right: 5%;
+    margin-top: 1.5%;
+    list-style: none;
+}
+
+header ul a {
+    color: white
+}
+
+header ul li {
+    display: inline-flex;
+    padding: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-left: 40px;
+    font-size: 30px;
+}
+
+header ul li:hover {
+    background: white;
+    color: black;
+    transition: ease 0.7s;
+}
+
+header ul li#accueil {
+    background: white;
+    color: black;
+}
+
+div.center {
+    width: 40%;
+    margin: auto;
+    margin-top: 320px;
+}
+
+div.center h1, div.center p {
+    text-align: center;
+    color: white;
+}
+
+div.center h1{
+    font-size: 65px;
+}
+
+div.center p{
+    margin-top: 2%;
+    font-size: 23px;
+}
+
