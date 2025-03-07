@@ -1,4 +1,6 @@
-div#background-image {
+/* ========== Accueil ========== */
+
+div#accueil {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/nature-3824496_1280.jpg");
     background-size: cover;
     background-position: center;
@@ -51,23 +53,84 @@ header ul li#accueil {
     color: black;
 }
 
-div.center {
+div#center {
     width: 40%;
     margin: auto;
     margin-top: 320px;
 }
 
-div.center h1, div.center p {
+div#center h1, div#center p {
     text-align: center;
     color: white;
 }
 
-div.center h1{
+div#center h1{
     font-size: 65px;
 }
 
-div.center p{
+div#center p{
     margin-top: 2%;
     font-size: 23px;
 }
 
+/* ========== Service ========== */
+
+div#service div.logo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+div#service p#logo{
+    border: solid 1px;
+    font-size: 25px;
+    margin-top: 1.5%;
+    margin-right: 2%;
+    padding: 0.5%;
+} 
+
+div#service p span {
+    color: red;
+    font-size: 35px;
+}
+
+div.service {
+    width: 60%;
+    margin-left: 4%;
+}
+
+div.service h2 {
+    font-weight: normal;
+    font-size: 40px;
+    margin-bottom: 3%;
+}
+
+div.service p {
+    font-size: 20px;
+    text-align: justify;
+}
+
+/* ========== Blog ========== */
+
+div#blog {
+    margin-top: 10%;
+}
+
+img#menuburger {
+    float: right;
+    margin-right: 2%;
+}
+
+div.blog {
+    width: 60%;
+    margin-left: 4%;
+}
+
+div.blog h2 {
+    font-weight: normal;
+    font-size: 40px;
+    /*margin-bottom: 3%;*/
+}
+
+div.blog p {
+    font-size: 20px;
+}
