@@ -48,7 +48,7 @@ header ul li:hover {
     transition: ease 0.7s;
 }
 
-header ul li#accueil {
+header ul li#Accueil {
     background: white;
     color: black;
 }
@@ -133,4 +133,63 @@ div.blog h2 {
 
 div.blog p {
     font-size: 20px;
+}
+
+
+/* ========== Blog 1 ========== */
+
+div.blog1 {
+    margin-left: 4%;
+    display: flex;
+    margin-bottom: 8%;
+}
+
+div.blog1 div.text {
+    width: 40%;
+}
+
+div.blog1 img {
+    margin-left: 3%;
+}
+
+/* ========== Blog 2 ========== */
+
+div.blog2 {
+    margin-left: 4%;
+    display: flex;
+    margin-bottom: 8%;
+}
+
+div.blog2 div.text {
+    width: 40%;
+    margin-left: 13%;
+} 
+
+
+/* ========== Blog 2 ========== */
+
+footer {
+    background-color: black;
+    
+}
+
+footer div.logo p{
+    display: inline-block;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5%;
+    margin-left: 2%;
+    margin-top: 1.5%;
+    font-size: 25px;
+}
+
+footer p span {
+    color: red;
+    font-size: 35px;
+}
+
+footer p#copyright {
+    color: white;
+    display: inline-block;
+    margin-left: 42%;
 }
