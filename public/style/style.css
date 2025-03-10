@@ -120,6 +120,11 @@ img#menuburger {
     margin-right: 2%;
 }
 
+img#menuburger:hover {
+    opacity: 0.6;
+    transition: ease 0.8s;
+}
+
 div.blog {
     width: 60%;
     margin-left: 4%;
@@ -170,6 +175,9 @@ div.blog2 div.text {
 
 footer {
     background-color: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/nature-3824496_1280.jpg");
+    background-size: cover;
+    background-position: center;
     
 }
 
@@ -192,4 +200,12 @@ footer p#copyright {
     color: white;
     display: inline-block;
     margin-left: 42%;
+}
+
+h2#post {
+    margin-left: 3%;
+}
+
+form {
+    margin-left: 3%;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capstone blog</title>
-    <link rel="stylesheet" href="../public/style/style.css">
+    <link rel="stylesheet" href="style/style.css"> <!-- link relative to the public folder -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
@@ -14,7 +14,7 @@
         <header>
             <p class="logo">LOGO <span>Y</span></p>
             <ul>
-                <a href="#"><li id="Accueil">ACCUEIL</li></a>
+                <a href="#accueil"><li id="Accueil">ACCUEIL</li></a>
                 <a href="#service"><li id="Service">SERVICE</li></a>
                 <a href="#blog"><li id="Blog">BLOG</li></a>
             </ul>
@@ -56,7 +56,7 @@
 
     <div id="blog">
 
-        <a href="#"><img src="../public/img/menuburger.jpg" alt="menuburger" id="menuburger" width="4%"></a>
+        <a href="#"><img src="img/menuburger.jpg" alt="menuburger" id="menuburger" width="4%"></a>
         
         <div class="blog">
 
@@ -73,11 +73,11 @@
                 <p>La ville de Krabi en Thaïlande est l'une des meilleures villes que j'ai pu faire dans ce pays. Entre les paysages paradisiaques, les balades en scooters et les activités nautiques, cette destination à tous pour vous faire kiffer !</p>
                 <p id="name">Par Ascareel</p>
             </div>
-            <img src="../public/img/in-Krabi.jpg" alt="krabi" width="30%" class="img1">            
+            <img src="/img/in-Krabi.jpg" alt="krabi" width="30%" class="img1">            
         </div>
 
         <div class="blog2">
-            <img src="../public/img/barcelona-beach-beautiful-sunset-955x508.jpg" alt="krabi" width="30%" class="img1">            
+            <img src="img/barcelona-beach-beautiful-sunset-955x508.jpg" alt="krabi" width="30%" class="img1">            
             <div class="text">
                 <h3>Espagne, Barcelone</h3>
                 <p>La ville de Krabi en Thaïlande est l'une des meilleures villes que j'ai pu faire dans ce pays. Entre les paysages paradisiaques, les balades en scooters et les activités nautiques, cette destination à tous pour vous faire kiffer !</p>
@@ -86,6 +86,17 @@
         </div>
 
     </div>
+
+    <h2 id="post">Faire un post</h2>
+    <form method="post" action="/post">
+        <input type="text" name="name" id="name" placeholder="Nom"><br>
+        <input type="text" name="country" id="country" placeholder="Pays"><br>
+        <input type="text" name="city" id="city" placeholder="Ville"><br>
+        <input type="text" name="image" id="image" placeholder="Image"><br>
+        <input type="textarea" name="story" id="story" placeholder="Histoire"><br>
+        <textarea name="" id="story" cols="40" rows="5" placeholder="Raconter votre histoire"></textarea>
+        <input type="submit" value="Envoyer">
+    </form>
 
     <footer>
         <div class="logo"> 
