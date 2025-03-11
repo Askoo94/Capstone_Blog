@@ -149,6 +149,10 @@ div.blog1 {
     margin-bottom: 8%;
 }
 
+div.blog1 div.text p#histoire {
+    word-break: break-all;
+}
+
 div.blog1 div.text {
     width: 40%;
 }
@@ -169,6 +173,10 @@ div.blog2 div.text {
     width: 40%;
     margin-left: 13%;
 } 
+
+div.blog2 div.text p#histoire {
+    word-break: break-all;
+}
 
 
 /* ========== Blog 2 ========== */

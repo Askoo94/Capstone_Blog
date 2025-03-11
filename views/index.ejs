@@ -70,7 +70,7 @@
         <div class="blog1">
             <div class="text">
                 <h3>Thaïlande, Krabi</h3>
-                <p>La ville de Krabi en Thaïlande est l'une des meilleures villes que j'ai pu faire dans ce pays. Entre les paysages paradisiaques, les balades en scooters et les activités nautiques, cette destination à tous pour vous faire kiffer !</p>
+                <p id="histoire">La ville de Krabi en Thaïlande est l'une des meilleures villes que j'ai pu faire dans ce pays. Entre les paysages paradisiaques, les balades en scooters et les activités nautiques, cette destination à tous pour vous faire kiffer !</p>
                 <p id="name">Par Ascareel</p>
             </div>
             <img src="/img/in-Krabi.jpg" alt="krabi" width="30%" class="img1">            
@@ -80,21 +80,34 @@
             <img src="img/barcelona-beach-beautiful-sunset-955x508.jpg" alt="krabi" width="30%" class="img1">            
             <div class="text">
                 <h3>Espagne, Barcelone</h3>
-                <p>La ville de Krabi en Thaïlande est l'une des meilleures villes que j'ai pu faire dans ce pays. Entre les paysages paradisiaques, les balades en scooters et les activités nautiques, cette destination à tous pour vous faire kiffer !</p>
+                <p id="histoire">La ville de Barcelone en Espagne est une ville chill où on peut se détendre, entre balade en scooter, activités nautiques, et balades à pieds dans la ville, cette ville est certainement l'une des meilleures à faire dans le pays.</p>
                 <p id="name">Par Ascareel</p>
             </div>
         </div>
 
     </div>
 
+    <% if(locals.Prénom || locals.Pays || locals.Ville || locals.Image || locals.Histoire) { %>
+
+        <div class="blog1">
+            <div class="text">
+                <h3><%= Pays %>, <%=  Ville %></h3>
+                <p id="histoire"><%= Histoire %></p>
+                <p id="name">By <%= Prénom %></p>
+            </div>
+            <img src="<%= Image  %>" alt="krabi" width="30%" class="img1">            
+        </div>
+        
+    <% } %>    
+    
+
     <h2 id="post">Faire un post</h2>
-    <form method="post" action="/post">
-        <input type="text" name="name" id="name" placeholder="Nom"><br>
+    <form method="POST" action="/submit">
+        <input type="text" name="nom" id="name" placeholder="Nom"><br>
         <input type="text" name="country" id="country" placeholder="Pays"><br>
         <input type="text" name="city" id="city" placeholder="Ville"><br>
         <input type="text" name="image" id="image" placeholder="Image"><br>
-        <input type="textarea" name="story" id="story" placeholder="Histoire"><br>
-        <textarea name="" id="story" cols="40" rows="5" placeholder="Raconter votre histoire"></textarea>
+        <textarea name="histoire" id="story" cols="40" rows="5" placeholder="Raconter votre histoire"></textarea><br>
         <input type="submit" value="Envoyer">
     </form>
 
