@@ -112,7 +112,8 @@ div.service p {
 /* ========== Blog ========== */
 
 div#blog {
-    margin-top: 10%;
+    padding-top: 7%;
+    margin-top: 3%;
 }
 
 img#menuburger {
@@ -210,10 +211,24 @@ footer p#copyright {
     margin-left: 42%;
 }
 
+
+/* ========== Form ========== */
+
 h2#post {
     margin-left: 3%;
 }
 
 form {
     margin-left: 3%;
+}
+
+form#form2 {
+    display: none;
+}
+
+textarea {
+    width: 400px;  
+    height: 200px; 
+    resize: none;  /* Empêcher le redimensionnement */
+    overflow: auto; /* Ajouter un défilement si besoin */
 }
