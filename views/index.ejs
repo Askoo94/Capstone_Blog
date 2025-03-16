@@ -102,40 +102,6 @@
                 </div>
             </div>
         </div>
-
-            <!-- Fenêtre modale -->
-        <!--<div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <form method="POST" action="/submit" id="form1">
-                    <select class="form-select" aria-label="Default select example" id="mySelect">
-                        <option selected value="1">Faire un post</option>
-                        <option value="2">Modifier un post</option>
-                        <option value="3">Supprimer un post</option>
-                    </select>
-                    <input type="text" name="nom" id="name" placeholder="Nom"><br>
-                    <input type="text" name="country" id="country" placeholder="Pays"><br>
-                    <input type="text" name="city" id="city" placeholder="Ville"><br>
-                    <input type="text" name="image" id="image" placeholder="Image"><br>
-                    <textarea name="histoire" id="story" cols="40" rows="5" placeholder="Raconter votre histoire"></textarea><br>
-                    <input type="submit" value="Envoyer">
-                </form>
-    
-                <form method="POST" action="/submit" id="form2">
-                    <select class="form-select" aria-label="Default select example" id="mySelect">
-                        <option selected value="1">Faire un post</option>
-                        <option value="2">Modifier un post</option>
-                        <option value="3">Supprimer un post</option>
-                    </select>
-                    <input type="text" name="nom" id="name" placeholder="Nom"><br>
-                    <input type="text" name="country" id="country" placeholder="Pays"><br>
-                    <input type="text" name="city" id="city" placeholder="Ville"><br>
-                    <input type="text" name="image" id="image" placeholder="Image" disabled><br>
-                    <textarea name="histoire" id="story" cols="40" rows="5" placeholder="Raconter votre histoire" disabled></textarea><br>
-                    <input type="submit" value="Envoyer">
-                </form>
-            </div>
-        </div> -->
         
         <div class="blog">
 
@@ -186,8 +152,10 @@
         <div class="logo"> 
             <p>LOGO <span>Y</span></p>
         </div>
+        <% if(locals.date) { %>
+        <p id="copyright">© <%= date %> LogoY. All rights reserved.</p>
+        <% } %>
 
-        <p id="copyright">© 2025 LogoY. All rights reserved.</p>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

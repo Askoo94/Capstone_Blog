@@ -9,8 +9,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
+let year = new Date();
+
 app.get('/', (req, res) => {
-  res.render("index.ejs");
+  res.render("index.ejs", {
+    date : year.getFullYear()
+  });
 });
 
 app.post("/submit", (req, res) => {
@@ -19,7 +23,8 @@ app.post("/submit", (req, res) => {
     Pays : req.body["country"],
     Ville : req.body["city"],
     Image : req.body["image"],
-    Histoire : req.body["histoire"]
+    Histoire : req.body["histoire"],
+    date : year.getFullYear()
   });
 });
 
