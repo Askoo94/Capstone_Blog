@@ -1,0 +1,11 @@
+{
+    "users": [
+      { "id": 1, "name": "Alice", "email": "alice@example.com" },
+      { "id": 2, "name": "Bob", "email": "bob@example.com" }
+    ],
+    "blog": [
+      { "id": 1, "name": "Ascareeel", "country": "Thailande", "city" : "Krabi", "image" : "", "story" : "La ville de Krabi en Thaïlande est l'une des meilleures villes que j'ai pu faire dans ce pays. Entre les paysages paradisiaques, les balades en scooters et les activités nautiques, cette destination à tous pour vous faire kiffer !" },
+      { "id": 2, "name": "Ascareeel", "country": "Espagne", "city" : "Barcelone", "image" : "", "story" : "La ville de Barcelone en Espagne est une ville chill où on peut se détendre, entre balade en scooter, activités nautiques, et balades à pieds dans la ville, cette ville est certainement l'une des meilleures à faire dans le pays." }
+    ]
+}
+  
