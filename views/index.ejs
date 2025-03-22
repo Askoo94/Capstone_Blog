@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    
+
+    <!-- Accueil -->
     <div id="accueil">
         <header>
             <p class="logo">LOGO <span>Y</span></p>
@@ -27,18 +28,16 @@
 
     </div>
 
-        
 
+    <!-- Service -->
     <div id="service">
 
         <div class="logo"> 
             <p id="logo">LOGO <span>Y</span></p>
         </div>
-        
-        <div class="service">
 
+        <div class="service">
             <h2>Service</h2>
-    
             <p>Bienvenue sur notre plateforme, un espace dédié aux passionnés de
                voyages et aux amateurs d'aventures authentiques. Ici, chaque anecdote, 
                qu'elle soit liée à un pays ou une ville, est une porte ouverte sur des 
@@ -49,15 +48,15 @@
                un explorateur en herbe, venez découvrir, raconter et inspirer des 
                parcours qui font la richesse de nos échanges.
             </p>
-
         </div>
-        
+
     </div>
 
+
+    <!-- Blog -->
     <div id="blog">
 
         <a data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="img/menuburger.jpg" alt="menuburger" id="menuburger" width="4%"></a>
-        
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -97,43 +96,43 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="blog">
-
             <h2>Blog</h2>
-
             <p>Lisez les derniers post en date</p>
-
-
         </div>
 
-        <div class="blog1">
-            <div class="text">
-                <h3>Thaïlande, Krabi</h3>
-                <p id="histoire">La ville de Krabi en Thaïlande est l'une des meilleures villes que j'ai pu faire dans ce pays. Entre les paysages paradisiaques, les balades en scooters et les activités nautiques, cette destination à tous pour vous faire kiffer !</p>
-                <p id="name">Par Ascareel</p>
-            </div>
-            <img src="/img/in-Krabi.jpg" alt="krabi" width="30%" class="img1">            
-        </div>
-
-        <div class="blog2">
-            <img src="img/barcelona-beach-beautiful-sunset-955x508.jpg" alt="krabi" width="30%" class="img1">            
-            <div class="text">
-                <h3>Espagne, Barcelone</h3>
-                <p id="histoire">La ville de Barcelone en Espagne est une ville chill où on peut se détendre, entre balade en scooter, activités nautiques, et balades à pieds dans la ville, cette ville est certainement l'une des meilleures à faire dans le pays.</p>
-                <p id="name">Par Ascareel</p>
-            </div>
-        </div>
+        <% if(locals.blogData) { %>
+            <% for(let i = 0; i < blogData.blog.length; i++) {%>
+                <% if( !(i % 2) ) { %>
+                    <div class="blog1">            
+                        <div class="text">
+                            <h3> <%= blogData.blog[i].country  %>, <%= blogData.blog[i].city  %></h3>
+                            <p id="histoire"> <%= blogData.blog[i].story  %> </p>
+                            <p id="name">Par <%= blogData.blog[i].name  %> </p>
+                        </div>
+                        <img src="<%= blogData.blog[i].image %>" alt="krabi" width="30%" class="img1">            
+                    </div>
+                <% } else { %>
+                    <div class="blog2">
+                        <img src="<%= blogData.blog[i].image %>" alt="<%= blogData.blog[i].city  %>" width="30%" class="img1">            
+                        <div class="text">
+                            <h3> <%= blogData.blog[i].country %>, <%= blogData.blog[i].city %> </h3>
+                            <p id="histoire"> <%= blogData.blog[i].story  %> </p>
+                            <p id="name">Par <%= blogData.blog[i].name  %> </p>
+                        </div>
+                    </div>
+                <% } %>         
+            <% } %>
+        <% } %>      
 
     </div>
 
     <% if(locals.Prénom || locals.Pays || locals.Ville || locals.Image || locals.Histoire) { %>
-
         <div class="blog1">
             <div class="text">
                 <h3><%= Pays %>, <%=  Ville %></h3>
@@ -141,21 +140,16 @@
                 <p id="name">By <%= Prénom %></p>
             </div>
             <img src="<%= Image  %>" alt="krabi" width="30%" class="img1">            
-        </div>
-        
+        </div> 
     <% } %>    
-    
 
-    
-
+    <!-- Footer -->
     <footer>
         <div class="logo"> 
             <p>LOGO <span>Y</span></p>
         </div>
-        <% if(locals.date) { %>
-        <p id="copyright">© <%= date %> LogoY. All rights reserved.</p>
-        <% } %>
-
+        <% let date = new Date() %>
+        <p id="copyright">© <%= date.getFullYear() %> LogoY. All rights reserved.</p>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
