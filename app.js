@@ -14,6 +14,8 @@ const data = JSON.parse(jsonData()) // Convert JSON -> JS Object
 
 let year = new Date();
 
+//console.log(data.blog.length)
+
 //console.log(data.blog)
 
 // Get the Name in Database (JSON file)
@@ -55,7 +57,30 @@ const getUserStoryById = (id) => {
 //console.log(getUserStoryById(1));
 
 
+// To post data into the db
+function postData(req, res) {
 
+  data.blog.push({ 
+
+    id: data.blog.length + 1,
+    name: req.body["nom"],
+    country: req.body["country"],
+    city: req.body["city"],
+    image: req.body["image"],
+    story: req.body["histoire"]
+
+  }); 
+
+  fs.writeFile("db.json", JSON.stringify(data), (err) => {
+    if (err) console.log(err);
+});
+
+}
+
+// To post data from the db
+function deleteData() {
+  
+}
 
 app.get('/', (req, res) => {
   res.render("index.ejs", {
@@ -64,14 +89,13 @@ app.get('/', (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
+
+  postData(req, res);
+
   res.render("index.ejs", {
     blogData : data,
-    Prénom : req.body["nom"], 
-    Pays : req.body["country"],
-    Ville : req.body["city"],
-    Image : req.body["image"],
-    Histoire : req.body["histoire"]
   });
+
 });
 
 app.listen(port, () => {
