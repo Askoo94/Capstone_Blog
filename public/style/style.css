@@ -151,7 +151,8 @@ div.blog1 {
 }
 
 div.blog1 div.text p#histoire {
-    word-break: break-all;
+    
+    text-align: justify;
 }
 
 div.blog1 div.text {
@@ -176,7 +177,7 @@ div.blog2 div.text {
 } 
 
 div.blog2 div.text p#histoire {
-    word-break: break-all;
+    text-align: justify;
 }
 
 

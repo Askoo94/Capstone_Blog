@@ -76,7 +76,7 @@
                             <input type="text" name="country" id="country" placeholder="Pays"><br>
                             <input type="text" name="city" id="city" placeholder="Ville"><br>
                             <input type="text" name="image" id="image" placeholder="Image"><br>
-                            <textarea name="histoire" id="story" cols="40" rows="5" placeholder="Raconter votre histoire"></textarea><br>
+                            <textarea name="histoire" id="story" cols="40" rows="5" placeholder="Raconter votre histoire" maxlength="400"></textarea><br>
                             <input type="submit" value="Envoyer">
                         </form>
             
@@ -131,17 +131,6 @@
         <% } %>      
 
     </div>
-
-    <% if(locals.Prénom || locals.Pays || locals.Ville || locals.Image || locals.Histoire) { %>
-        <div class="blog1">
-            <div class="text">
-                <h3><%= Pays %>, <%=  Ville %></h3>
-                <p id="histoire"><%= Histoire %></p>
-                <p id="name">By <%= Prénom %></p>
-            </div>
-            <img src="<%= Image  %>" alt="krabi" width="30%" class="img1">            
-        </div> 
-    <% } %>    
 
     <!-- Footer -->
     <footer>

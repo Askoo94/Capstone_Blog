@@ -5,7 +5,7 @@ import fs from "fs";
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.urlencoded({ extended: true })); // Enable body parse in the body
+app.use(express.urlencoded({ extended: true })); // Enable body parse in the body
 
 app.use(express.static('public')); // Enable the distribution of static file
 
