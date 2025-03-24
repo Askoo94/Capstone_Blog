@@ -80,7 +80,7 @@
                             <input type="submit" value="Envoyer">
                         </form>
             
-                        <form method="POST" action="/submit" id="form2">
+                        <form method="POST" action="/delete" id="form2">
                             <select class="form-select" aria-label="Default select example" id="mySelect">
                                 <option selected value="1">Faire un post</option>
                                 <option value="2">Modifier un post</option>
@@ -115,7 +115,7 @@
                             <p id="histoire"> <%= blogData.blog[i].story  %> </p>
                             <p id="name">Par <%= blogData.blog[i].name  %> </p>
                         </div>
-                        <img src="<%= blogData.blog[i].image %>" alt="krabi" width="30%" class="img1">            
+                        <img src="<%= blogData.blog[i].image %>" alt="<%= blogData.blog[i].city  %>" width="30%" class="img1">            
                     </div>
                 <% } else { %>
                     <div class="blog2">

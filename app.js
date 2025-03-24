@@ -1,5 +1,4 @@
 import express from "express";
-import bodyParser from "body-parser";
 import fs from "fs";
 
 const app = express();
@@ -14,48 +13,7 @@ const data = JSON.parse(jsonData()) // Convert JSON -> JS Object
 
 let year = new Date();
 
-//console.log(data.blog.length)
-
-//console.log(data.blog)
-
-// Get the Name in Database (JSON file)
-/*
-const getUserNameById = (id) => {
-  const db = readDB(); // db est un objet contenant { users: [...] }
-  const blog = db.blog.find(blog => blog.id === id);
-  return blog ? blog.name : "Utilisateur non trouvé";
-};
-
-// Get the Countryin Database (JSON file)
-const getUserCountryById = (id) => {
-  const db = readDB(); // db est un objet contenant { users: [...] }
-  const blog = db.blog.find(blog => blog.id === id);
-  return blog ? blog.country : "Utilisateur non trouvé";
-};
-
-// Get the City in Database (JSON file)
-const getUserCityById = (id) => {
-  const db = readDB(); // db est un objet contenant { users: [...] }
-  const blog = db.blog.find(blog => blog.id === id);
-  return blog ? blog.city : "Utilisateur non trouvé";
-};
-
-// Get the Image in Database (JSON file)
-const getUserImageById = (id) => {
-  const db = readDB(); // db est un objet contenant { users: [...] }
-  const blog = db.blog.find(blog => blog.id === id);
-  return blog ? blog.image: "Utilisateur non trouvé";
-};
-
-// Get the Story in Database (JSON file)
-const getUserStoryById = (id) => {
-  const db = readDB(); // db est un objet contenant { users: [...] }
-  const blog = db.blog.find(blog => blog.id === id);
-  return blog ? blog.story : "Utilisateur non trouvé";
-}; */
-
-//console.log(getUserStoryById(1));
-
+//console.log(data.blog[0]);
 
 // To post data into the db
 function postData(req, res) {
@@ -73,21 +31,37 @@ function postData(req, res) {
 
   fs.writeFile("db.json", JSON.stringify(data), (err) => {
     if (err) console.log(err);
-});
+  }); 
 
 }
 
 // To post data from the db
-function deleteData() {
+function deleteData(req, res) {
+
+  let ok = 0;
   
+  for(let i = 0; i < data.blog.length; i++) {
+
+    if(data.blog[i].name == req.body["nom"] && data.blog[i].country == req.body["country"] && data.blog[i].city == req.body["city"]) {
+      data.blog.splice(i, 1);
+      ok = 1;
+    }
+    else if(ok == 1){
+      data.blog[i].id = i-1;
+    }
+  }
 }
 
+
+// Get the main route of the website
 app.get('/', (req, res) => {
   res.render("index.ejs", {
     blogData : data
   });
 });
 
+
+// Post data in blog
 app.post("/submit", (req, res) => {
 
   postData(req, res);
@@ -98,6 +72,20 @@ app.post("/submit", (req, res) => {
 
 });
 
+
+// Delete data in blog
+app.post("/delete", (req, res) => {
+
+  deleteData(req, res);
+
+  res.render("index.ejs", {
+    blogData : data,
+  });
+
+});
+
+
+// Listen app on port 3000
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
