@@ -223,7 +223,7 @@ form {
     margin-left: 3%;
 }
 
-form#form2 {
+form#form2, form#form3 {
     display: none;
 }
 

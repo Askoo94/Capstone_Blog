@@ -50,6 +50,15 @@ function deleteData(req, res) {
       data.blog[i].id = i-1;
     }
   }
+
+  fs.writeFile("db.json", JSON.stringify(data), (err) => {
+    if (err) console.log(err);
+  });
+
+}
+
+function modifyData(req, res) {
+
 }
 
 
@@ -63,6 +72,16 @@ app.get('/', (req, res) => {
 
 // Post data in blog
 app.post("/submit", (req, res) => {
+
+  postData(req, res);
+
+  res.render("index.ejs", {
+    blogData : data,
+  });
+
+});
+
+app.post("/put", (req, res) => {
 
   postData(req, res);
 

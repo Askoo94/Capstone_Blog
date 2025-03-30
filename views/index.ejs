@@ -79,6 +79,20 @@
                             <textarea name="histoire" id="story" cols="40" rows="5" placeholder="Raconter votre histoire" maxlength="400"></textarea><br>
                             <input type="submit" value="Envoyer">
                         </form>
+
+                        <form method="POST" action="/put" id="form3">
+                            <select class="form-select" aria-label="Default select example" id="mySelect">
+                                <option selected value="1">Faire un post</option>
+                                <option value="2">Modifier un post</option>
+                                <option value="3">Supprimer un post</option>
+                            </select>
+                            <input type="text" name="nom" id="name" placeholder="Nom"><br>
+                            <input type="text" name="country" id="country" placeholder="Pays"><br>
+                            <input type="text" name="city" id="city" placeholder="Ville"><br>
+                            <input type="text" name="image" id="image" placeholder="Image"><br>
+                            <textarea name="histoire" id="story" cols="40" rows="5" placeholder="Raconter votre histoire" maxlength="400"></textarea><br>
+                            <input type="submit" value="Envoyer">
+                        </form>
             
                         <form method="POST" action="/delete" id="form2">
                             <select class="form-select" aria-label="Default select example" id="mySelect">
