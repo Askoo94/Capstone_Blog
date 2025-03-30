@@ -58,6 +58,22 @@ function deleteData(req, res) {
 }
 
 function modifyData(req, res) {
+  
+  for(let i = 0; i < data.blog.length; i++) {
+
+    if(data.blog[i].name == req.body["nom"] && data.blog[i].country == req.body["country"] && data.blog[i].city == req.body["city"]) {
+
+      data.blog[i].image = req.body["image"];
+      data.blog[i].story = req.body["histoire"];
+
+      break;
+    }
+
+  }
+
+  fs.writeFile("db.json", JSON.stringify(data), (err) => {
+    if (err) console.log(err);
+  });
 
 }
 
@@ -83,7 +99,7 @@ app.post("/submit", (req, res) => {
 
 app.post("/put", (req, res) => {
 
-  postData(req, res);
+  modifyData(req, res);
 
   res.render("index.ejs", {
     blogData : data,
