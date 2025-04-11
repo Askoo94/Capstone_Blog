@@ -4,7 +4,7 @@ div#accueil {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/nature-3824496_1280.jpg");
     background-size: cover;
     background-position: center;
-    height: 1000px;
+    height: 950px;
 }
 
 header p {
@@ -181,7 +181,7 @@ div.blog2 div.text p#histoire {
 }
 
 
-/* ========== Blog 2 ========== */
+/* ========== footer ========== */
 
 footer {
     background-color: black;
@@ -232,4 +232,127 @@ textarea {
     height: 200px; 
     resize: none;  /* Empêcher le redimensionnement */
     overflow: auto; /* Ajouter un défilement si besoin */
+}
+
+
+
+/* ================ Responsive design ================ */
+
+@media screen and (max-width : 1065px)
+{
+    /* ========== Accueil ========== */
+
+    div#accueil {
+        height: 900px;
+    }
+
+    div#center h1 {
+        font-size: 55px;
+    }
+
+    div#center p{
+        font-size: 21px;
+    }
+
+    header ul li {
+        padding-left: 25px;
+        padding-right: 25px;
+        margin-left: 30px;
+        font-size: 25px;
+    }
+
+    /* ========== Service & Blog ========== */
+
+    header p#logo, div#service p#logo, footer div.logo p{
+        font-size: 22px;
+    } 
+
+    header p span, div#service p span, footer p span {
+        font-size: 30px;
+    }
+
+    div.service h2, div.blog h2 {
+        font-size: 35px;
+    }
+
+    div.service p, div.blog p {
+        font-size: 17px;
+    }
+
+    /* ========== Blog 1 & 2 ========== */
+
+    div.blog1 div.text h3, div.blog2 div.text h3 {
+        font-size: 20px;
+    }
+
+    div.blog1 div.text p#histoire, div.blog2 div.text p#histoire, div.blog1 div.text p#name, div.blog2 div.text p#name {
+        font-size: 14px;
+    } 
+
+    /* ========== footer ========== */
+
+    footer p#copyright {
+        font-size: 15px;
+        margin-left: 38%;
+    }
+}
+
+
+@media screen and (max-width : 800px)
+{
+    /* ========== Accueil ========== */
+       
+    div#accueil {
+        height: 850px;
+    }
+
+    div#center h1 {
+        font-size: 45px;
+    }
+
+    div#center p{
+        font-size: 19px;
+    }
+
+    header ul li {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 35px;
+        font-size: 20px;
+    }
+
+    /* ========== Service & Blog ========== */
+
+    header p#logo, div#service p#logo, footer div.logo p{
+        font-size: 20px;
+    } 
+
+    header p span, div#service p span, footer p span {
+        font-size: 26px;
+    }
+
+    div.service h2, div.blog h2 {
+        font-size: 30px;
+    }
+
+    div.service p, div.blog p {
+        font-size: 14px;
+    }
+
+    /* ========== Blog 1 & 2 ========== */
+
+    div.blog1 div.text h3, div.blog1 div.text h3 {
+        /*font-size: ;*/
+    }
+
+    div.blog1 div.text p#histoire, div.blog2 div.text p#histoire, div.blog1 div.text p#name, div.blog2 div.text p#name {
+        font-size: 12px;
+    }
+
+    /* ========== footer ========== */
+
+    footer p#copyright {
+        font-size: 14px;
+        margin-left: 37%;
+    }
 }
